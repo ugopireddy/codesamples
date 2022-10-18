@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class MostCommonWord {
     public static void main(String[] args) {
-        String paragraph = "Bob hit a ball, the hit ball flew after it was hit";
+        String paragraph = "Bob hit a ball the hit ball flew after it was hit";
         String[] banned = new String[]{"hit"};
         System.out.println("Most Common word in Paragraph is : "+ mostCommonWord(paragraph, banned));
     }
