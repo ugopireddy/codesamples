@@ -12,11 +12,11 @@ public class FizzBuzz {
         for (int i =1; i<= n; i++){
 
             if (i%3 == 0 && i%5 == 0) {
-                output.add(i-1, "FizzBuzz");
+                output.add("FizzBuzz");
             }else if (i%3 == 0){
-                output.add(i-1, "Fizz");
+                output.add("Fizz");
             }else if (i%5 == 0){
-                output.add(i-1, "Buzz");
+                output.add("Buzz");
             }else {
                 output.add(String.valueOf(i));
             }
