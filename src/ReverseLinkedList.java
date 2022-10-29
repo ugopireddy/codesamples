@@ -1,9 +1,28 @@
+import java.util.Stack;
+
 public class ReverseLinkedList {
     public static void main(String[] args) {
         ListNode listNode = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-        ListNode output  = reverseList2(listNode);
+        ListNode output  = reverseList3(listNode);
         System.out.println("Reverse list : " + output);
     }
+
+    private static ListNode reverseList3(ListNode head) {
+        Stack<ListNode> stack = new Stack<>();
+        while(head != null){
+            stack.push(head);
+            head = head.next;
+        }
+        ListNode output = new ListNode(0);
+        head = output;
+        while (!stack.isEmpty()){
+            ListNode current = stack.pop();
+            head.next = new ListNode(current.val);
+            head = head.next;
+        }
+        return output.next;
+    }
+
     //1-2-3-4-5-null
     //1-null //
     //2-3-4-5-null //next

@@ -32,13 +32,11 @@ public class NaryTreePostorderTraversal {
         stack.add(root);
         while (!stack.isEmpty()){
             root = stack.pop();
-            output.add(root.val);
+            output.add(0,root.val);
             for (Node node : root.children){
                 stack.add(node);
             }
         }
-        Collections.reverse(output);
-
     }
 
     private static List<Integer> recursivePostorderTraversal(List<Integer> output, Node root) {
