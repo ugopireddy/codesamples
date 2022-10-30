@@ -11,14 +11,12 @@ public class LicenseFormatting {
         for (int i = str.length()-1; i>=0; i--  ){
             if(str.charAt(i) == '-') continue;
             if(count == k){
-                output.append('-');
+                output.insert(0, '-');
                 count =0;
             }
-            output.append(str.charAt(i));
-
-
+            output.insert(0, str.charAt(i));
             count ++;
         }
-        return output.reverse().toString().toUpperCase();
+        return output.toString().toUpperCase();
     }
 }

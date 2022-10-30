@@ -8,16 +8,15 @@ public class ReverseLinkedList {
     }
 
     private static ListNode reverseList3(ListNode head) {
-        Stack<ListNode> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
         while(head != null){
-            stack.push(head);
+            stack.push(head.val);
             head = head.next;
         }
         ListNode output = new ListNode(0);
         head = output;
         while (!stack.isEmpty()){
-            ListNode current = stack.pop();
-            head.next = new ListNode(current.val);
+            head.next = new ListNode(stack.pop());
             head = head.next;
         }
         return output.next;
