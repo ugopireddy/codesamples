@@ -2,7 +2,8 @@ public class LongestCommonPrefix
 {
     public static void main(String[] args) {
         String[] strs = new String[]{"flower", "flow", "flight"};
-        System.out.println("longest common prefix : "+ longestCommonPrefix(strs));
+        String[] strs1 = new String[]{"c","acc","ccc"};
+        System.out.println("longest common prefix : "+ longestCommonPrefix1(strs));
     }
 
     private static String longestCommonPrefix(String[] strs) {
@@ -19,5 +20,18 @@ public class LongestCommonPrefix
             index++;
         }
         return lcp;
+    }
+    public static String longestCommonPrefix1(String[] strs) {
+        String prefix = strs[0];
+
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()){
+                    return "";
+                }
+            }
+        }
+        return prefix;
     }
 }
